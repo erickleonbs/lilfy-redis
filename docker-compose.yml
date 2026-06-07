@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  lilfy-redis:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: lilfy-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+volumes:
+  redis_data:
